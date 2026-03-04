@@ -1,12 +1,11 @@
 import Link from "next/link";
 
-const linkStyle = {
-  color: "white",
-  textDecoration: "none",
-  padding: "8px 12px",
-  borderRadius: "6px",
-  transition: "all 0.25s ease",
-};
+const items = [
+  { label: "Nosotros", href: "/#nosotros" },
+  { label: "Nuestros Productos", href: "/productos" },
+  { label: "Servicio de Catering", href: "/#catering" },
+  { label: "Experiencias", href: "/#experiencias" },
+];
 
 export default function Navbar() {
   return (
@@ -19,6 +18,7 @@ export default function Navbar() {
         zIndex: 50,
         background: "rgba(0,0,0,0.65)",
         backdropFilter: "blur(10px)",
+        borderBottom: "1px solid rgba(255,255,255,0.10)",
       }}
     >
       <nav
@@ -31,73 +31,63 @@ export default function Navbar() {
           justifyContent: "space-between",
         }}
       >
-        {/* MENÚ */}
-        <div style={{ display: "flex", gap: 20 }}>
-          <Link
-            href="/#nosotros"
-            style={linkStyle}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "rgba(255,255,255,0.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "transparent";
-            }}
-          >
-            Nosotros
-          </Link>
+        {/* MENU */}
+        <div style={{ display: "flex", gap: 22 }}>
+          {items.map((it) => (
+            <Link
+              key={it.href}
+              href={it.href}
+              style={{
+                color: "white",
+                textDecoration: "none",
+                fontSize: 14,
+                opacity: 0.92,
+                padding: "6px 2px",
+                position: "relative",
+                display: "inline-block",
+                transition: "opacity 0.2s ease",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.92")}
+            >
+              {it.label}
 
-          <Link
-            href="/productos"
-            style={linkStyle}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "rgba(255,255,255,0.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "transparent";
-            }}
-          >
-            Nuestros Productos
-          </Link>
-
-          <Link
-            href="/#catering"
-            style={linkStyle}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "rgba(255,255,255,0.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "transparent";
-            }}
-          >
-            Servicio de Catering
-          </Link>
-
-          <Link
-            href="/#experiencias"
-            style={linkStyle}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "rgba(255,255,255,0.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "transparent";
-            }}
-          >
-            Experiencias
-          </Link>
+              {/* LINEA ANIMADA */}
+              <span
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  bottom: -6,
+                  height: 2,
+                  width: "100%",
+                  background: "white",
+                  transform: "scaleX(0)",
+                  transformOrigin: "left",
+                  transition: "transform 220ms ease",
+                  opacity: 0.9,
+                }}
+                className="nav-underline"
+              />
+            </Link>
+          ))}
         </div>
 
-        {/* LOGO */}
-        <Link href="/">
+        {/* LOGO (derecha) */}
+        <Link href="/" style={{ display: "flex", alignItems: "center" }}>
           <img
             src="/images/logo.png"
             alt="La Fragua"
-            style={{
-              height: 38,
-              cursor: "pointer",
-            }}
+            style={{ height: 36, width: "auto" }}
           />
         </Link>
       </nav>
+
+      {/* CSS SOLO PARA HOVER DE LA LINEA */}
+      <style>{`
+        a:hover .nav-underline {
+          transform: scaleX(1);
+        }
+      `}</style>
     </header>
   );
 }
