@@ -1,4 +1,3 @@
-// app/components/Navbar.tsx
 import Link from "next/link";
 
 export default function Navbar() {
@@ -10,26 +9,27 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        padding: "14px 24px",
-        background: "rgba(0,0,0,0.45)",
+        background: "rgba(0,0,0,0.65)",
         backdropFilter: "blur(10px)",
-        borderBottom: "1px solid rgba(255,255,255,0.12)",
+        borderBottom: "1px solid rgba(255,255,255,0.10)",
       }}
     >
       <nav
         style={{
           maxWidth: 1100,
           margin: "0 auto",
+          padding: "14px 18px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: 16,
+          gap: 18,
         }}
       >
+        {/* Logo / Marca */}
         <Link
           href="/"
           style={{
-            color: "white",
+            color: "#fff",
             textDecoration: "none",
             fontWeight: 700,
             letterSpacing: 0.5,
@@ -38,18 +38,34 @@ export default function Navbar() {
           La Fragua
         </Link>
 
-        <div style={{ display: "flex", gap: 16 }}>
-          <Link href="/asado" style={{ color: "white", textDecoration: "none", opacity: 0.9 }}>
-            Asado
+        {/* Menú */}
+        <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+          <Link
+            href="/#nosotros"
+            style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none" }}
+          >
+            Nosotros
           </Link>
-          <Link href="/pizzas" style={{ color: "white", textDecoration: "none", opacity: 0.9 }}>
-            Pizzas
+
+          <Link
+            href="/productos"
+            style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none" }}
+          >
+            Nuestros Productos
           </Link>
-          <Link href="/productos" style={{ color: "white", textDecoration: "none", opacity: 0.9 }}>
-            Productos
+
+          <Link
+            href="/#catering"
+            style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none" }}
+          >
+            Servicio de Catering
           </Link>
-          <Link href="/contacto" style={{ color: "white", textDecoration: "none", opacity: 0.9 }}>
-            Contacto
+
+          <Link
+            href="/#experiencias"
+            style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none" }}
+          >
+            Experiencias
           </Link>
         </div>
       </nav>

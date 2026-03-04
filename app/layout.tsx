@@ -1,6 +1,7 @@
-import Navbar from "./components/Navbar";
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import Navbar from "./components/Navbar";
+import FloatingButtons from "./components/FloatingButtons";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -25,10 +26,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
-  <Navbar />
-  {children}
-</body>
+      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+        <Navbar />
+
+        <div style={{ paddingTop: 64 }}>
+          {children}
+        </div>
+
+        <FloatingButtons />
+      </body>
     </html>
   );
 }
