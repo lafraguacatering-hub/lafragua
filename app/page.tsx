@@ -8,7 +8,7 @@ const playfair = Playfair_Display({
 export default function Home() {
   return (
     <main style={{ fontFamily: "Arial", background: "#0b0b0b", color: "#fff" }}>
-      {/* HERO */}
+      {/* CORTE*/}
       <section
         style={{
           minHeight: "78vh",
