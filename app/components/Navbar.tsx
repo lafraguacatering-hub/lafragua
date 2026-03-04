@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+const linkStyle = {
+  color: "white",
+  textDecoration: "none",
+  padding: "8px 12px",
+  borderRadius: "6px",
+  transition: "all 0.25s ease",
+};
+
 export default function Navbar() {
   return (
     <header
@@ -11,63 +19,84 @@ export default function Navbar() {
         zIndex: 50,
         background: "rgba(0,0,0,0.65)",
         backdropFilter: "blur(10px)",
-        borderBottom: "1px solid rgba(255,255,255,0.10)",
       }}
     >
       <nav
         style={{
           maxWidth: 1100,
           margin: "0 auto",
-          padding: "14px 18px",
+          padding: "14px 20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: 18,
         }}
       >
-        {/* Logo / Marca */}
-        <Link
-          href="/"
-          style={{
-            color: "#fff",
-            textDecoration: "none",
-            fontWeight: 700,
-            letterSpacing: 0.5,
-          }}
-        >
-          La Fragua
-        </Link>
-
-        {/* Menú */}
-        <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+        {/* MENÚ */}
+        <div style={{ display: "flex", gap: 20 }}>
           <Link
             href="/#nosotros"
-            style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none" }}
+            style={linkStyle}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+            }}
           >
             Nosotros
           </Link>
 
           <Link
             href="/productos"
-            style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none" }}
+            style={linkStyle}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+            }}
           >
             Nuestros Productos
           </Link>
 
           <Link
             href="/#catering"
-            style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none" }}
+            style={linkStyle}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+            }}
           >
             Servicio de Catering
           </Link>
 
           <Link
             href="/#experiencias"
-            style={{ color: "rgba(255,255,255,0.9)", textDecoration: "none" }}
+            style={linkStyle}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+            }}
           >
             Experiencias
           </Link>
         </div>
+
+        {/* LOGO */}
+        <Link href="/">
+          <img
+            src="/images/logo.png"
+            alt="La Fragua"
+            style={{
+              height: 38,
+              cursor: "pointer",
+            }}
+          />
+        </Link>
       </nav>
     </header>
   );
