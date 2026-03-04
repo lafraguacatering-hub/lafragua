@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 
@@ -25,8 +26,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${playfair.variable} ${inter.variable} antialiased`}>
-        {children}
-      </body>
+  <Navbar />
+  {children}
+</body>
     </html>
   );
 }
