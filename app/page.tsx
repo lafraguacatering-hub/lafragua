@@ -1,20 +1,19 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="page">
+    <main className="page">
       {/* HERO */}
       <section className="hero">
         <div className="heroOverlay" />
+
         <div className="heroInner fadeUp">
           <p className="kicker">BUENOS AIRES</p>
 
           <h1 className="title">La Fragua</h1>
 
           <p className="subtitle">
-            Experiencia gastronómica & servicio de catering para eventos privados y
-            corporativos.
+            Servicio de catering y experiencias gastronómicas con identidad.
           </p>
 
           <div className="ctaRow">
@@ -28,85 +27,84 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2 FOTOS (sin superponerse) */}
+      {/* 2 FOTOS (chicas, pegadas, sin superponer) */}
       <section className="section">
         <div className="container">
           <h2 className="h2">Ritual de fuego. Cocina con oficio.</h2>
           <p className="p">
             La Fragua combina el espíritu de la parrilla argentina con una estética
-            moderna y prolija.
+            moderna para eventos privados y corporativos.
           </p>
 
-          <div className="grid">
-            <article className="card">
-              <div className="cardImg">
-                <Image
-                  src="/images/choris.jpg"
-                  alt="Recepción y picada"
-                  fill
-                  sizes="(max-width: 900px) 100vw, 520px"
-                  style={{ objectFit: "cover" }}
-                  priority={false}
-                />
-              </div>
-              <div className="cardBody">
-                <div className="cardTitle">Recepción & picada</div>
-                <div className="cardText">Choripán artesanal, panes y salsas caseras.</div>
-              </div>
-            </article>
+          <div className="photoGrid">
+            <figure className="photoCard">
+              <img
+                className="photoImg"
+                src="/images/choris.jpg"
+                alt="Recepción y picada"
+              />
+              <figcaption className="photoCap">
+                <div className="photoTitle">Recepción & picada</div>
+                <div className="photoText">Pan, salsas y clásicos de parrilla.</div>
+              </figcaption>
+            </figure>
 
-            <article className="card">
-              <div className="cardImg">
-                <Image
-                  src="/images/corte.jpg"
-                  alt="Cortes y fuego"
-                  fill
-                  sizes="(max-width: 900px) 100vw, 520px"
-                  style={{ objectFit: "cover" }}
-                  priority={false}
-                />
-              </div>
-              <div className="cardBody">
-                <div className="cardTitle">Cortes & fuego</div>
-                <div className="cardText">Cocción a las brasas y servicio profesional.</div>
-              </div>
-            </article>
+            <figure className="photoCard">
+              <img
+                className="photoImg"
+                src="/images/corte.jpg"
+                alt="Cortes y fuego"
+              />
+              <figcaption className="photoCap">
+                <div className="photoTitle">Cortes & fuego</div>
+                <div className="photoText">Servicio prolijo, cocción a brasas.</div>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      {/* NOSOTROS (anchor para la navbar) */}
-      <section id="nosotros" className="section about">
-        <div className="container aboutInner">
-          <div className="aboutPhoto">
-            <Image
-              src="/images/nosotros.jpg"
-              alt="Jeremías e Inés - La Fragua"
-              fill
-              sizes="(max-width: 900px) 100vw, 520px"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
+      {/* NOSOTROS (ancla para la navbar) */}
+      <section id="nosotros" className="about">
+        <div className="container">
+          <div className="aboutInner">
+            <div className="aboutPhotoWrap">
+              <img
+                className="aboutPhoto"
+                src="/images/nosotros.jpg"
+                alt="Jeremías e Inés"
+              />
+            </div>
 
-          <div className="aboutText">
-            <h2 className="h2">Nosotros</h2>
-            <p className="p">
-              Somos Jeremías e Inés, hermanos unidos por una visión compartida y las
-              ganas de crear algo con identidad propia. Como fundadores de La Fragua,
-              volcamos en este espacio nuestra mayor herencia: una pasión innegable por
-              la gastronomía y el placer de compartir una buena mesa. Inés aporta su
-              mirada detallista y estética a través de la fotografía, capturando la
-              esencia de lo que hacemos, mientras que ambos trabajamos codo a codo para
-              que cada proyecto refleje ese fuego creativo que nos define. Para
-              nosotros, La Fragua no es solo un emprendimiento; es el punto de
-              encuentro donde el diseño, el sabor y nuestra historia familiar se
-              funden para dar vida a experiencias únicas.
-            </p>
+            <div className="aboutText">
+              <h2 className="h2">Nosotros</h2>
+              <p className="p aboutP">
+                Somos Jeremías e Inés, hermanos unidos por una visión compartida y las
+                ganas de crear algo con identidad propia. Como fundadores de La Fragua,
+                volcamos en este espacio nuestra mayor herencia: una pasión innegable
+                por la gastronomía y el placer de compartir una buena mesa. Inés aporta
+                su mirada detallista y estética a través de la fotografía, capturando la
+                esencia de lo que hacemos, mientras que ambos trabajamos codo a codo para
+                que cada proyecto refleje ese fuego creativo que nos define. Para nosotros,
+                La Fragua no es solo un emprendimiento; es el punto de encuentro donde el
+                diseño, el sabor y nuestra historia familiar se funden para dar vida a
+                experiencias únicas.
+              </p>
+
+              <div className="aboutActions">
+                <Link className="cta" href="/catering">
+                  Pedir cotización
+                </Link>
+                <Link className="cta ghost" href="/productos">
+                  Ver productos
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER CONTACTO */}
       <footer className="footer">
         <div className="container">
           <div className="footerInner">
@@ -140,6 +138,29 @@ export default function Home() {
                   lafraguacatering@gmail.com
                 </a>
               </div>
+
+              <div className="footerCtaRow">
+                <a
+                  className="footerCta"
+                  href={
+                    "mailto:lafraguacatering@gmail.com" +
+                    "?subject=" +
+                    encodeURIComponent("Consulta / Cotización - La Fragua") +
+                    "&body=" +
+                    encodeURIComponent(
+                      "Hola La Fragua!\n\nQuiero consultar por un evento.\n\n" +
+                        "Nombre:\n" +
+                        "Teléfono:\n" +
+                        "Cantidad de personas:\n" +
+                        "Fecha:\n" +
+                        "Zona:\n\n" +
+                        "Gracias!"
+                    )
+                  }
+                >
+                  Contactarnos
+                </a>
+              </div>
             </div>
           </div>
 
@@ -148,6 +169,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   );
-}import ContactForm from "./components/ContactForm";
+}

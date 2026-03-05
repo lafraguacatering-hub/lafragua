@@ -9,7 +9,7 @@ export default function Navbar() {
         </Link>
 
         <nav className="navLinks" aria-label="Navegación principal">
-          <a className="navLink" href="#nosotros">
+          <a className="navLink" href="/#nosotros">
             Nosotros
           </a>
 
@@ -17,10 +17,10 @@ export default function Navbar() {
             Productos
           </Link>
 
-          {/* Dropdown SOLO con CSS (sin JS / sin eventos) */}
-          <div className="navDrop">
-            <span className="navLink navDropTrigger">Catering</span>
-            <div className="navDropMenu">
+          {/* Dropdown SIN JS (con <details>) */}
+          <details className="navDrop">
+            <summary className="navLink navDropSummary">Catering</summary>
+            <div className="navDropMenu" role="menu" aria-label="Catering">
               <Link className="navDropItem" href="/asado">
                 Asado argentino
               </Link>
@@ -28,7 +28,7 @@ export default function Navbar() {
                 Pizzas napolitanas
               </Link>
             </div>
-          </div>
+          </details>
         </nav>
       </div>
 

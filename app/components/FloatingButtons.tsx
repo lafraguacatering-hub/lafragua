@@ -1,8 +1,9 @@
-"use client";
-
-const WA_MESSAGE = encodeURIComponent(
-  "Hola La Fragua! Quiero cotizar un evento. Mi nombre es ____ y somos ____ personas. Fecha: ____. Zona: ____."
-);
+const WA_MESSAGE =
+  "Hola%20La%20Fragua!%20Quiero%20cotizar%20un%20evento.%0A%0A" +
+  "Mi%20nombre%3A%20____%0A" +
+  "Cantidad%20de%20personas%3A%20____%0A" +
+  "Fecha%3A%20____%0A" +
+  "Zona%3A%20____%0A";
 
 export default function FloatingButtons() {
   return (
@@ -17,7 +18,6 @@ export default function FloatingButtons() {
         title="WhatsApp"
       >
         <span className="tooltip">WhatsApp</span>
-
         <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
           <path
             fill="currentColor"
@@ -36,7 +36,6 @@ export default function FloatingButtons() {
         title="Instagram"
       >
         <span className="tooltip">Instagram</span>
-
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
           <path
             fill="currentColor"
