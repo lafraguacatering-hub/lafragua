@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
-
 import { Playfair_Display, Inter } from "next/font/google";
-
+import "./globals.css";
 import Navbar from "./components/Navbar";
 import FloatingButtons from "./components/FloatingButtons";
 
@@ -14,13 +12,13 @@ const playfair = Playfair_Display({
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   title: "La Fragua",
-  description: "Asado argentino y pizzas napolitanas",
+  description: "Experiencias gastronómicas a fuego real.",
 };
 
 export default function RootLayout({
@@ -29,10 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
-      <body>
+    <html lang="es">
+      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <Navbar />
-        <div style={{ paddingTop: 64 }}>{children}</div>
+        {children}
         <FloatingButtons />
       </body>
     </html>

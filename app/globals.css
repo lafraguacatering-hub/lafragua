@@ -1,16 +1,27 @@
-/* --- reset básico (evita espacios blancos) --- */
-html,
-body {
+/* ---------- RESET ---------- */
+html, body {
   margin: 0;
   padding: 0;
 }
 
-/* Tipografías globales */
 body {
-  font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial,
-    sans-serif;
   background: #0b0b0b;
   color: #fff;
+  font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+/* Titulares con Playfair */
+.title, .h1, .h2, .navBrand {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
 }
 
 /* ---------- NAVBAR (transparente sobre la foto) ---------- */
@@ -38,8 +49,9 @@ body {
 .navBrand {
   color: #fff;
   text-decoration: none;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0.2px;
+  font-size: 18px;
 }
 
 .navLinks {
@@ -82,6 +94,58 @@ body {
   transform: scaleX(1);
 }
 
+/* Dropdown */
+.navDrop {
+  position: relative;
+}
+
+.navDropTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navCaret {
+  font-size: 12px;
+  opacity: 0.9;
+  transform: translateY(1px);
+}
+
+.navDropMenu {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  min-width: 190px;
+  background: rgba(10, 10, 10, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+  display: none;
+}
+
+.navDrop:hover .navDropMenu,
+.navDrop:focus-within .navDropMenu {
+  display: block;
+}
+
+.navDropItem {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.88);
+  font-weight: 650;
+  font-size: 14px;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.navDropItem:hover {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 /* línea sutil animada bajo la navbar */
 .navLine {
   height: 2px;
@@ -96,29 +160,19 @@ body {
 }
 
 @keyframes navGlow {
-  0% {
-    transform: translateX(-18%);
-    opacity: 0.14;
-  }
-  50% {
-    transform: translateX(18%);
-    opacity: 0.28;
-  }
-  100% {
-    transform: translateX(-18%);
-    opacity: 0.14;
-  }
+  0% { transform: translateX(-18%); opacity: 0.14; }
+  50% { transform: translateX(18%); opacity: 0.28; }
+  100% { transform: translateX(-18%); opacity: 0.14; }
 }
 
 /* ---------- HERO (usa hero.jpg SI O SI) ---------- */
 .hero {
   position: relative;
   min-height: 100vh;
-  padding: 110px 24px 70px; /* espacio para navbar */
+  padding: 110px 24px 70px; /* espacio navbar */
   display: flex;
   align-items: center;
   justify-content: center;
-
   background-image: url("/images/hero.jpg");
   background-size: cover;
   background-position: center;
@@ -128,12 +182,9 @@ body {
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      circle at 40% 30%,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.75)
-    ),
-    linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.25));
+  background:
+    radial-gradient(circle at 40% 30%, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.75)),
+    linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.25));
 }
 
 .heroInner {
@@ -150,10 +201,7 @@ body {
   font-size: 12px;
 }
 
-/* Títulos (hero) */
 .title {
-  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
-  letter-spacing: 0.2px;
   margin: 14px 0 14px;
   line-height: 1.02;
   font-size: 72px;
@@ -206,6 +254,12 @@ body {
   margin: 0 auto;
 }
 
+.h1 {
+  margin: 0 0 10px;
+  font-size: 44px;
+  line-height: 1.1;
+}
+
 .h2 {
   margin: 0 0 12px;
   font-size: 28px;
@@ -237,7 +291,6 @@ body {
 }
 
 .cardImg {
-  position: relative;
   height: 240px;
 }
 
@@ -312,72 +365,62 @@ body {
 }
 
 .floatBtn {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 999px;
   display: grid;
   place-items: center;
+  color: #fff; /* svg usa currentColor */
   text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.18);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   transition: transform 160ms ease, filter 160ms ease;
-
-  /* SVG usa currentColor */
-  color: #fff;
-
-  /* tooltip */
   position: relative;
-  overflow: visible;
 }
 
 .floatBtn:hover {
   transform: translateY(-3px);
+  filter: brightness(1.03);
 }
 
-/* Colores reales */
 .waBtn {
   background: #25d366;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .igBtn {
-  background: radial-gradient(
-    circle at 30% 110%,
+  background: radial-gradient(circle at 30% 110%,
     #fdf497 0%,
     #fdf497 5%,
     #fd5949 45%,
     #d6249f 60%,
-    #285aeb 90%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.18);
+    #285aeb 90%);
 }
 
-/* ---------- TOOLTIP simple ---------- */
-.tooltip {
-  position: absolute;
-  right: 60px;
-  top: 50%;
-  transform: translateY(-50%) translateX(8px);
-  background: rgba(0, 0, 0, 0.75);
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  white-space: nowrap;
+/* Tooltip */
+.tooltip{
+  position:absolute;
+  right:60px;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,.75);
+  color:#fff;
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:700;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s ease, transform .15s ease;
+  white-space:nowrap;
 }
 
-.floatBtn:hover .tooltip {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
+.floatBtn:hover .tooltip{
+  opacity:1;
+  transform:translateY(-50%) translateX(-4px);
 }
 
-@media (max-width: 700px) {
-  .tooltip {
-    display: none;
-  }
+@media (max-width:700px){
+  .tooltip{ display:none; }
 }
 
 /* ---------- ANIMATION suave (fade/slide) ---------- */
@@ -386,19 +429,12 @@ body {
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Mobile */
 @media (max-width: 520px) {
-  .title {
-    font-size: 52px;
-  }
+  .title { font-size: 52px; }
+  .h1 { font-size: 36px; }
 }
