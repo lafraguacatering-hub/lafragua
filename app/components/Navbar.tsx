@@ -4,26 +4,23 @@ export default function Navbar() {
   return (
     <header className="nav">
       <div className="navInner">
-        <Link className="navBrand" href="/">
+        <Link href="/" className="navBrand">
           La Fragua
         </Link>
 
         <nav className="navLinks" aria-label="Navegación principal">
-          <Link className="navLink" href="/#nosotros">
+          <a className="navLink" href="#nosotros">
             Nosotros
+          </a>
+
+          <Link className="navLink" href="/productos">
+            Productos
           </Link>
 
-          {/* Dropdown Catering */}
+          {/* Dropdown SOLO con CSS (sin JS / sin eventos) */}
           <div className="navDrop">
-            <Link className="navLink navDropTrigger" href="/catering">
-              Catering
-              <span className="navCaret" aria-hidden="true">▾</span>
-            </Link>
-
-            <div className="navDropMenu" role="menu" aria-label="Catering">
-              <Link className="navDropItem" href="/catering">
-                Ver catering
-              </Link>
+            <span className="navLink navDropTrigger">Catering</span>
+            <div className="navDropMenu">
               <Link className="navDropItem" href="/asado">
                 Asado argentino
               </Link>
@@ -32,18 +29,9 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
-
-          <Link className="navLink" href="/productos">
-            Productos
-          </Link>
-
-          <Link className="navLink" href="/#contacto">
-            Contacto
-          </Link>
         </nav>
       </div>
 
-      {/* Línea sutil animada */}
       <div className="navLine" />
     </header>
   );

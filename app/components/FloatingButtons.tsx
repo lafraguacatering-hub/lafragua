@@ -1,4 +1,3 @@
-const WA_NUMBER = "5491130835097";
 const WA_MESSAGE =
   "Hola%20La%20Fragua!%20Quiero%20cotizar%20un%20evento.%20Mi%20nombre%20es%20____%20y%20somos%20____%20personas.%20Fecha:%20____.%20Zona:%20____.";
 
@@ -8,7 +7,7 @@ export default function FloatingButtons() {
       {/* WhatsApp */}
       <a
         className="floatBtn waBtn"
-        href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
+        href={`https://wa.me/5491130835097?text=${WA_MESSAGE}`}
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp"
