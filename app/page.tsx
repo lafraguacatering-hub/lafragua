@@ -1,122 +1,134 @@
-import { Playfair_Display } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
 
 export default function Home() {
   return (
     <main style={{ background: "#0b0b0b", color: "#fff" }}>
-      {/* HERO FULLSCREEN */}
-      <section
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "96px 24px 64px",
-          backgroundImage:
-            "linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.20)), url('/images/corte.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ maxWidth: 1100, margin: "0 auto", width: "100%" }}>
-          <p
-            style={{
-              letterSpacing: 2,
-              textTransform: "uppercase",
-              opacity: 0.85,
-              margin: 0,
-              fontSize: 13,
-            }}
-          >
-            Buenos Aires
-          </p>
+      {/* HERO */}
+      <section className="hero">
+        {/* overlay */}
+        <div className="heroOverlay" />
 
-          <h1
-            className={playfair.className}
-            style={{ fontSize: 72, margin: "14px 0 14px", lineHeight: 1.02 }}
-          >
-            La Fragua
-          </h1>
-
-          <p style={{ fontSize: 18, maxWidth: 720, opacity: 0.9, margin: "0 auto" }}>
+        {/* contenido */}
+        <div className="heroInner fadeUp">
+          <p className="kicker">BUENOS AIRES</p>
+          <h1 className="title">La Fragua</h1>
+          <p className="subtitle">
             Asado argentino tradicional + Pizzas napolitanas al horno de leña.
-            Experiencias rústicas con estética moderna.
+            Estética rústica con espíritu moderno.
           </p>
 
-          {/* CTA opcional (uno solo) */}
-          <div
-            style={{
-              marginTop: 28,
-              display: "flex",
-              gap: 12,
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            <Link
-              href="/productos"
-              style={{
-                background: "rgba(255,255,255,0.12)",
-                color: "#fff",
-                padding: "12px 16px",
-                borderRadius: 14,
-                textDecoration: "none",
-                border: "1px solid rgba(255,255,255,0.22)",
-                fontWeight: 700,
-              }}
-            >
+          <div className="ctaRow">
+            <Link className="cta" href="/productos">
               Ver propuestas
+            </Link>
+            <Link className="cta ghost" href="/asado">
+              Servicio de catering
             </Link>
           </div>
         </div>
       </section>
 
+      {/* 2 FOTOS ABAJO */}
+      <section className="section">
+        <div className="container">
+          <div className="fadeUp">
+            <h2 className="h2">Ritual de fuego. Cocina con oficio.</h2>
+            <p className="p">
+              La Fragua combina el espíritu de la parrilla argentina con una
+              presentación moderna y prolija para eventos particulares,
+              corporativos y experiencias gastronómicas.
+            </p>
+          </div>
+
+          <div className="grid fadeUp">
+            <article className="card">
+              <div className="cardImg">
+                <Image
+                  src="/images/choris.jpg"
+                  alt="Recepción y picada"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  style={{ objectFit: "cover" }}
+                  priority={false}
+                />
+              </div>
+              <div className="cardBody">
+                <div className="cardTitle">Recepción & picada</div>
+                <div className="cardText">
+                  Choripán artesanal, panes y salsas caseras.
+                </div>
+              </div>
+            </article>
+
+            <article className="card">
+              <div className="cardImg">
+                <Image
+                  src="/images/corte.jpg"
+                  alt="Cortes y fuego"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  style={{ objectFit: "cover" }}
+                  priority={false}
+                />
+              </div>
+              <div className="cardBody">
+                <div className="cardTitle">Cortes & fuego</div>
+                <div className="cardText">
+                  Cocción a las brasas y servicio profesional.
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER CONTACTO */}
-      <footer
-        style={{
-          borderTop: "1px solid rgba(255,255,255,0.10)",
-          padding: "28px 24px",
-          background: "#0b0b0b",
-        }}
-      >
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: 16,
-              flexWrap: "wrap",
-            }}
-          >
-            <div>
-              <div style={{ fontWeight: 800, marginBottom: 6 }}>La Fragua</div>
-              <div style={{ opacity: 0.75, fontSize: 14 }}>Buenos Aires, Argentina</div>
-            </div>
-
-            <div>
-              <div style={{ fontWeight: 800, marginBottom: 6 }}>Contacto</div>
-              <div style={{ opacity: 0.85, fontSize: 14 }}>
-                WhatsApp: <span style={{ opacity: 0.9 }}>(completá tu número)</span>
-              </div>
-              <div style={{ opacity: 0.85, fontSize: 14 }}>
-                Instagram: <span style={{ opacity: 0.9 }}>@lafragua</span>
-              </div>
-              <div style={{ opacity: 0.85, fontSize: 14 }}>
-                Email: <span style={{ opacity: 0.9 }}>lafraguacatering@gmail.com</span>
-              </div>
-            </div>
+      <footer className="footer">
+        <div className="container footerInner">
+          <div>
+            <div className="footerBrand">La Fragua</div>
+            <div className="footerMuted">Buenos Aires, Argentina</div>
           </div>
 
-          <div style={{ marginTop: 18, opacity: 0.6, fontSize: 13 }}>
-            © {new Date().getFullYear()} La Fragua. Todos los derechos reservados.
+          <div>
+            <div className="footerBrand">Contacto</div>
+
+            <div className="footerLine">
+              WhatsApp:{" "}
+              <a
+                className="footerLink"
+                href="https://wa.me/5491130835097"
+                target="_blank"
+                rel="noreferrer"
+              >
+                +54 9 11 3083 5097
+              </a>
+            </div>
+
+            <div className="footerLine">
+              Instagram:{" "}
+              <a
+                className="footerLink"
+                href="https://www.instagram.com/lafraguacatering/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @lafraguacatering
+              </a>
+            </div>
+
+            <div className="footerLine">
+              Email:{" "}
+              <a className="footerLink" href="mailto:lafraguacatering@gmail.com">
+                lafraguacatering@gmail.com
+              </a>
+            </div>
           </div>
+        </div>
+
+        <div className="container footerBottom">
+          © {new Date().getFullYear()} La Fragua. Todos los derechos reservados.
         </div>
       </footer>
     </main>

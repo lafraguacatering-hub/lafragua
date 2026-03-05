@@ -36,4 +36,346 @@ h1, h2, h3 {
 
 body {
   font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}/* ---------- NAVBAR ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(10, 10, 10, 0.28);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.navBrand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  padding: 8px 6px;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.navLink:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 4px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.85);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* Línea animada (sutil) */
+.navLine {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0.22;
+  animation: navGlow 3.2s ease-in-out infinite;
+}
+
+@keyframes navGlow {
+  0% {
+    transform: translateX(-18%);
+    opacity: 0.14;
+  }
+  50% {
+    transform: translateX(18%);
+    opacity: 0.28;
+  }
+  100% {
+    transform: translateX(-18%);
+    opacity: 0.14;
+  }
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 110px 24px 70px; /* espacio para navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/images/corte.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 40% 30%,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.75)
+    ),
+    linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.25));
+}
+
+.heroInner {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+.kicker {
+  letter-spacing: 3px;
+  opacity: 0.85;
+  margin: 0;
+  font-size: 12px;
+}
+
+.title {
+  margin: 14px 0 14px;
+  line-height: 1.02;
+  font-size: 72px;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 760px;
+  opacity: 0.92;
+  font-size: 18px;
+}
+
+.ctaRow {
+  margin-top: 26px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-weight: 800;
+  transition: transform 180ms ease, background 180ms ease, border 180ms ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.cta.ghost {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- SECTION / CARDS ---------- */
+.section {
+  padding: 56px 24px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.p {
+  margin: 0 0 22px;
+  opacity: 0.85;
+  max-width: 820px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #111;
+  transition: transform 200ms ease, border 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.cardImg {
+  position: relative;
+  height: 240px;
+}
+
+.cardBody {
+  padding: 14px;
+}
+
+.cardTitle {
+  font-weight: 900;
+}
+
+.cardText {
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 28px 24px;
+  background: #0b0b0b;
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footerBrand {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.footerMuted {
+  opacity: 0.75;
+  font-size: 14px;
+}
+
+.footerLine {
+  opacity: 0.85;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.footerLink {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.footerLink:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.footerBottom {
+  margin-top: 16px;
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+/* ---------- FLOATING BUTTONS ---------- */
+.floatWrap {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 60;
+}
+
+.floatBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 160ms ease;
+}
+
+.floatBtn:hover {
+  transform: translateY(-3px);
+}
+
+.ghostBtn {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.floatIcon {
+  font-size: 18px;
+}
+
+/* ---------- ANIMATION (fade/slide) ---------- */
+.fadeUp {
+  animation: fadeUp 700ms ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 520px) {
+  .title {
+    font-size: 52px;
+  }
 }
