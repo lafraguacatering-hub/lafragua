@@ -5,6 +5,14 @@ body {
   padding: 0;
 }
 
+/* Tipografías globales */
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+}
+
 /* ---------- NAVBAR (transparente sobre la foto) ---------- */
 .nav {
   position: fixed;
@@ -111,9 +119,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  /* ✅ ESTA ES LA LÍNEA CLAVE */
   background-image: url("/images/hero.jpg");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -144,7 +150,10 @@ body {
   font-size: 12px;
 }
 
+/* Títulos (hero) */
 .title {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  letter-spacing: 0.2px;
   margin: 14px 0 14px;
   line-height: 1.02;
   font-size: 72px;
@@ -308,22 +317,67 @@ body {
   border-radius: 999px;
   display: grid;
   place-items: center;
-  background: rgba(255, 255, 255, 0.92);
-  color: #111;
   text-decoration: none;
-  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 160ms ease;
+  transition: transform 160ms ease, filter 160ms ease;
+
+  /* SVG usa currentColor */
+  color: #fff;
+
+  /* tooltip */
+  position: relative;
+  overflow: visible;
 }
 
 .floatBtn:hover {
   transform: translateY(-3px);
 }
 
-.ghostBtn {
-  background: rgba(0, 0, 0, 0.35);
-  color: #fff;
+/* Colores reales */
+.waBtn {
+  background: #25d366;
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.igBtn {
+  background: radial-gradient(
+    circle at 30% 110%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* ---------- TOOLTIP simple ---------- */
+.tooltip {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.floatBtn:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+@media (max-width: 700px) {
+  .tooltip {
+    display: none;
+  }
 }
 
 /* ---------- ANIMATION suave (fade/slide) ---------- */
@@ -347,29 +401,4 @@ body {
   .title {
     font-size: 52px;
   }
-}/* Botones flotantes con colores reales */
-.floatBtn {
-  color: #fff; /* los svg usan currentColor */
 }
-
-.waBtn {
-  background: #25d366; /* WhatsApp */
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.waBtn:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.03);
-}
-
-.igBtn {
-  background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.igBtn:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.03);
-}
-
-/* si tenías ghostBtn, ya no hace falta (pero no molesta) */
