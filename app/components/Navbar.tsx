@@ -4,26 +4,33 @@ export default function Navbar() {
   return (
     <header className="nav">
       <div className="navInner">
+
         <Link href="/" className="navBrand">
           La Fragua
         </Link>
 
         <nav className="navLinks">
-          <Link className="navLink" href="/">
+
+          <Link href="/" className="navLink">
             Nosotros
           </Link>
-          <Link className="navLink" href="/productos">
+
+          <Link href="/productos" className="navLink">
             Nuestros Productos
           </Link>
-          <Link className="navLink" href="/asado">
+
+          <Link href="/asado" className="navLink">
             Servicio de Catering
           </Link>
-          <Link className="navLink" href="/experiencias">
-            Experiencias
+
+          <Link href="/pizzas" className="navLink">
+            Pizzas
           </Link>
+
         </nav>
       </div>
-      <div className="navLine" />
+
+      <div className="navLine"></div>
     </header>
   );
 }

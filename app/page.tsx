@@ -4,12 +4,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main style={{ background: "#0b0b0b", color: "#fff" }}>
-      {/* HERO */}
+      {/* HERO FULLSCREEN */}
       <section className="hero">
-        {/* overlay */}
         <div className="heroOverlay" />
 
-        {/* contenido */}
         <div className="heroInner fadeUp">
           <p className="kicker">BUENOS AIRES</p>
           <h1 className="title">La Fragua</h1>
@@ -29,15 +27,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2 FOTOS ABAJO */}
+      {/* SECCIÓN 2 FOTOS */}
       <section className="section">
         <div className="container">
           <div className="fadeUp">
             <h2 className="h2">Ritual de fuego. Cocina con oficio.</h2>
             <p className="p">
               La Fragua combina el espíritu de la parrilla argentina con una
-              presentación moderna y prolija para eventos particulares,
-              corporativos y experiencias gastronómicas.
+              presentación moderna y prolija para eventos particulares y
+              corporativos.
             </p>
           </div>
 
@@ -50,7 +48,6 @@ export default function Home() {
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}
-                  priority={false}
                 />
               </div>
               <div className="cardBody">
@@ -69,7 +66,6 @@ export default function Home() {
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}
-                  priority={false}
                 />
               </div>
               <div className="cardBody">
