@@ -325,4 +325,164 @@ h2 {
     height: 260px;
   }
 
+}/* ===== Fix tooltip floating buttons ===== */
+
+.floatWrap {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.floatBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 160ms ease, filter 160ms ease;
+  position: relative;
+}
+
+.floatBtn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.03);
+}
+
+.waBtn {
+  background: #25d366;
+}
+
+.igBtn {
+  background: radial-gradient(
+    circle at 30% 110%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+/* Tooltip bien legible, sin mayúsculas raras */
+.tooltip {
+  position: absolute;
+  right: 64px;
+  top: 50%;
+  transform: translateY(-50%) translateX(0);
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.floatBtn:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+@media (max-width: 700px) {
+  .tooltip {
+    display: none;
+  }
+}/* ===== Contact form ===== */
+
+.contactCard {
+  margin-top: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(17, 17, 17, 0.82);
+  padding: 18px;
+  max-width: 780px;
+}
+
+.contactTitle {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.contactSubtitle {
+  margin: 0 0 14px;
+  opacity: 0.82;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  padding: 12px 12px;
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.textarea {
+  margin-top: 10px;
+  resize: vertical;
+}
+
+.btnPrimary {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+}
+
+.contactSmall {
+  margin-top: 10px;
+  opacity: 0.75;
+  font-size: 13px;
+}
+
+.linkInline {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.linkInline:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
 }

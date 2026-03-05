@@ -150,4 +150,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+}import ContactForm from "./components/ContactForm";
