@@ -347,4 +347,29 @@ body {
   .title {
     font-size: 52px;
   }
+}/* Botones flotantes con colores reales */
+.floatBtn {
+  color: #fff; /* los svg usan currentColor */
 }
+
+.waBtn {
+  background: #25d366; /* WhatsApp */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.waBtn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.03);
+}
+
+.igBtn {
+  background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.igBtn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.03);
+}
+
+/* si tenías ghostBtn, ya no hace falta (pero no molesta) */
