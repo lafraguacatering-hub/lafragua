@@ -1394,4 +1394,334 @@ body {
     margin-top: 8px;
     padding: 12px 14px;
   }
+}/* ============================= */
+/* COTIZADOR PAGE */
+/* ============================= */
+
+.cotizadorPage {
+  padding-top: 24px;
+}
+
+.cotizadorContainer {
+  max-width: 1200px;
+}
+
+.cotizadorIntro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 34px;
+}
+
+.cotizadorKicker {
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.72;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.cotizadorTitle {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.cotizadorText {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.cotizadorLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.cotizadorFormCard,
+.cotizadorResumeCard {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.cotizadorFormCard {
+  padding: 24px;
+}
+
+.cotizadorResumeCard {
+  padding: 24px;
+  position: sticky;
+  top: 110px;
+}
+
+.cotizadorFieldGroup + .cotizadorFieldGroup {
+  margin-top: 24px;
+}
+
+.cotizadorLabel {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.cotizadorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cotizadorFieldFull {
+  grid-column: 1 / -1;
+}
+
+.cotizadorInput {
+  width: 100%;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+  padding: 0 14px;
+  outline: none;
+  font-size: 15px;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+.cotizadorInput:focus {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cotizadorHint {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.cotizadorServiceSwitch {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.cotizadorServiceBtn {
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cotizadorServiceBtn.isActive {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.cotizadorOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.cotizadorOptionCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.cotizadorOptionCard input {
+  accent-color: white;
+}
+
+.cotizadorOptionCard span {
+  line-height: 1.35;
+}
+
+.cotizadorOptionCard.isDisabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cotizadorResumeKicker {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.cotizadorResumeTitle {
+  margin: 0 0 20px;
+  font-size: 30px;
+  line-height: 1.05;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.cotizadorResumeList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.cotizadorResumeRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cotizadorResumeRow span {
+  opacity: 0.72;
+}
+
+.cotizadorResumeRow strong {
+  text-align: right;
+  max-width: 58%;
+}
+
+.cotizadorAlert {
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+}
+
+.cotizadorTotalBox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 16px;
+}
+
+.cotizadorTotalBox span {
+  font-size: 13px;
+  opacity: 0.72;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cotizadorTotalBox strong {
+  font-size: 34px;
+  line-height: 1;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.cotizadorMeta {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: 0.74;
+}
+
+.cotizadorActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.cotizadorActionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cotizadorActionBtn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.cotizadorActionBtn.ghost {
+  background: transparent;
+}
+
+.cotizadorActionBtn.isDisabled {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+@media (max-width: 980px) {
+  .cotizadorLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .cotizadorResumeCard {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .cotizadorFormCard,
+  .cotizadorResumeCard {
+    padding: 18px;
+  }
+
+  .cotizadorGrid,
+  .cotizadorOptions {
+    grid-template-columns: 1fr;
+  }
+
+  .cotizadorServiceSwitch {
+    width: 100%;
+  }
+
+  .cotizadorServiceBtn {
+    flex: 1;
+  }
+
+  .cotizadorResumeTitle {
+    font-size: 26px;
+  }
+
+  .cotizadorTotalBox strong {
+    font-size: 28px;
+  }
+}.cotizadorInput option {
+  color: #111;
+}
+
+.cotizadorSubmit {
+  width: 100%;
+  margin-top: 24px;
+  cursor: pointer;
 }
