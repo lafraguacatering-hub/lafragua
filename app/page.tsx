@@ -65,32 +65,32 @@ export default function Home() {
             presentación moderna.
           </p>
 
-          <div className="photoGrid">
-            <div className="photoCard">
-              <div className="photoCap">
-                <div className="photoTitle">Asado argentino</div>
-                <div className="photoText">
+          <div className="offerGrid">
+            <div className="offerCard">
+              <div>
+                <div className="offerTitle">Asado argentino</div>
+                <div className="offerText">
                   Choripán, achuras, cortes premium y servicio completo.
                 </div>
-                <div style={{ marginTop: 10 }}>
-                  <Link className="cta ctaPrimary" href="/asado">
-                    Ver menús
-                  </Link>
-                </div>
+              </div>
+              <div className="offerActions">
+                <Link className="cta ctaPrimary" href="/asado">
+                  Ver menús
+                </Link>
               </div>
             </div>
 
-            <div className="photoCard">
-              <div className="photoCap">
-                <div className="photoTitle">Pizzas napolitanas</div>
-                <div className="photoText">
+            <div className="offerCard">
+              <div>
+                <div className="offerTitle">Pizzas napolitanas</div>
+                <div className="offerText">
                   Horno de leña, masa de larga fermentación y toppings clásicos.
                 </div>
-                <div style={{ marginTop: 10 }}>
-                  <Link className="cta ctaPrimary" href="/pizzas">
-                    Ver pizzas
-                  </Link>
-                </div>
+              </div>
+              <div className="offerActions">
+                <Link className="cta ctaPrimary" href="/pizzas">
+                  Ver pizzas
+                </Link>
               </div>
             </div>
           </div>
