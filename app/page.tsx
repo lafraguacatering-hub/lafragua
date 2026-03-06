@@ -57,42 +57,125 @@ export default function Home() {
       </section>
 
       {/* OFERTA (ANCLA PARA CATERING) */}
-      <section id="oferta" className="section">
-        <div className="container">
-          <h2 className="h2">Qué te podemos ofrecer</h2>
-          <p className="p">
+      <section className="offerSection" id="oferta">
+        <div className="offerContainer">
+          <h2 className="offerTitle">Qué te podemos ofrecer</h2>
+          <p className="offerSubtitle">
             Catering a medida para eventos particulares y corporativos. Fuego, horno de leña y una
             presentación moderna.
           </p>
 
           <div className="offerGrid">
-            <div className="offerCard">
-              <div>
-                <div className="offerTitle">Asado argentino</div>
-                <div className="offerText">
+            <article className="offerCard">
+              <div className="offerCardContent">
+                <h3 className="offerCardTitle">Asado argentino</h3>
+                <p className="offerCardText">
                   Choripán, achuras, cortes premium y servicio completo.
-                </div>
+                </p>
               </div>
-              <div className="offerActions">
-                <Link className="cta ctaPrimary" href="/asado">
-                  Ver menús
-                </Link>
-              </div>
-            </div>
 
-            <div className="offerCard">
-              <div>
-                <div className="offerTitle">Pizzas napolitanas</div>
-                <div className="offerText">
+              <Link className="offerButton" href="/asado">
+                Ver menús
+              </Link>
+            </article>
+
+            <article className="offerCard">
+              <div className="offerCardContent">
+                <h3 className="offerCardTitle">Pizzas napolitanas</h3>
+                <p className="offerCardText">
                   Horno de leña, masa de larga fermentación y toppings clásicos.
-                </div>
+                </p>
               </div>
-              <div className="offerActions">
-                <Link className="cta ctaPrimary" href="/pizzas">
-                  Ver pizzas
-                </Link>
-              </div>
-            </div>
+
+              <Link className="offerButton" href="/pizzas">
+                Ver pizzas
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCTOS (SCROLL ANCLA) */}
+      <section className="productsSection" id="productos">
+        <div className="productsContainer">
+          <h2 className="productsTitle">Productos</h2>
+          <p className="productsSubtitle">
+            Próximamente vas a poder ver toda nuestra línea de productos para cocinar, servir y vivir
+            la experiencia La Fragua.
+          </p>
+
+          <div className="productsGrid">
+            <article className="productCard">
+              <img
+                className="productImage"
+                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
+                alt="Delantal La Fragua"
+              />
+              <h3 className="productName">Delantales</h3>
+            </article>
+
+            <article className="productCard">
+              <img
+                className="productImage"
+                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
+                alt="Cortadora de pizza La Fragua"
+              />
+              <h3 className="productName">Cortadora de Pizza</h3>
+            </article>
+
+            <article className="productCard">
+              <img
+                className="productImage"
+                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
+                alt="Parrilla de piso La Fragua"
+              />
+              <h3 className="productName">Parrilla de piso</h3>
+            </article>
+
+            <article className="productCard">
+              <img
+                className="productImage"
+                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
+                alt="Chulengo La Fragua"
+              />
+              <h3 className="productName">Chulengo</h3>
+            </article>
+
+            <article className="productCard">
+              <img
+                className="productImage"
+                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
+                alt="Fogonero La Fragua"
+              />
+              <h3 className="productName">Fogonero</h3>
+            </article>
+
+            <article className="productCard">
+              <img
+                className="productImage"
+                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
+                alt="Piedra refractaria para horno La Fragua"
+              />
+              <h3 className="productName">Piedra Refractaria para el horno</h3>
+            </article>
+
+            <article className="productCard">
+              <img
+                className="productImage"
+                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
+                alt="Tabla de madera maciza multiuso La Fragua"
+              />
+              <h3 className="productName">Tabla de Madera Maciza Multiuso</h3>
+            </article>
+
+            <article className="productCard">
+              <img
+                className="productImage"
+                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
+                alt="Cuchillo de asado de 30 cm La Fragua"
+              />
+              <h3 className="productName">Cuchillo de Asado 30cm</h3>
+            </article>
           </div>
         </div>
       </section>
