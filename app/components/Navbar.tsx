@@ -4,11 +4,11 @@ export default function Navbar() {
   return (
     <header className="nav">
       <div className="navInner">
-        <Link href="/" className="navBrand">
+        <Link href="/" className="navBrand navBrandSerif">
           La Fragua
         </Link>
 
-        <nav className="navLinks" aria-label="Navegación principal">
+        <nav className="navLinks navLinksCentered" aria-label="Navegación principal">
           <a className="navLink" href="/#nosotros">
             Nosotros
           </a>
@@ -17,10 +17,12 @@ export default function Navbar() {
             Productos
           </Link>
 
-          {/* Dropdown SIN JS (con <details>) */}
           <details className="navDrop">
             <summary className="navLink navDropSummary">Catering</summary>
             <div className="navDropMenu" role="menu" aria-label="Catering">
+              <a className="navDropItem" href="/#oferta">
+                Qué te podemos ofrecer
+              </a>
               <Link className="navDropItem" href="/asado">
                 Asado argentino
               </Link>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import FloatingButtons from "./components/FloatingButtons";
 
 const playfair = Playfair_Display({
@@ -31,6 +31,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable}`}>
         <Navbar />
         {children}
+        <Footer />
         <FloatingButtons />
       </body>
     </html>
