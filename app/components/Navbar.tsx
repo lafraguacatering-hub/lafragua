@@ -13,9 +13,9 @@ export default function Navbar() {
             Nosotros
           </a>
 
-          <Link className="navLink" href="/productos">
+          <a className="navLink" href="/#productos">
             Productos
-          </Link>
+          </a>
 
           <details className="navDrop">
             <summary className="navLink navDropSummary">Catering</summary>

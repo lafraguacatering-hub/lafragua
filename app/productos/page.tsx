@@ -1,47 +1,41 @@
-import Link from "next/link";
+import Image from "next/image";
+
+const productos = [
+  { nombre: "Delantales", precio: "$25.000" },
+  { nombre: "Cortadora de Pizza", precio: "$12.000" },
+  { nombre: "Parrilla de piso", precio: "$95.000" },
+  { nombre: "Chulengo", precio: "$120.000" },
+  { nombre: "Fogonero", precio: "$85.000" },
+  { nombre: "Piedra Refractaria para el horno", precio: "$18.000" },
+  { nombre: "Tabla de Madera Maciza Multiuso", precio: "$30.000" },
+  { nombre: "Cuchillo de Asado 30cm", precio: "$28.000" },
+];
 
 export default function ProductosPage() {
   return (
-    <main className="page">
-      <section className="section">
-        <div className="container">
-          <h1 className="h1">Productos</h1>
-          <p className="p">
-            Propuestas pensadas para eventos privados y corporativos, con foco en el fuego y la
-            cocina en vivo.
-          </p>
+    <main className="productsPage">
+      <div className="productsContainer">
+        <h1 className="productsTitle">Productos</h1>
 
-          <div className="grid">
-            <article className="card">
-              <div className="cardBody">
-                <div className="cardTitle">Asado argentino</div>
-                <div className="cardText">
-                  Menús de recepción, cortes premium y guarniciones para distintos tipos de eventos.
-                </div>
-                <div style={{ marginTop: 12 }}>
-                  <Link className="cta" href="/asado">
-                    Ver menús de asado
-                  </Link>
-                </div>
+        <div className="productsGrid">
+          {productos.map((producto, i) => (
+            <div key={i} className="productCard">
+              <div className="productImageWrapper">
+                <Image
+                  src="/images/logoblanco.png"
+                  alt={producto.nombre}
+                  width={200}
+                  height={200}
+                  className="productImage"
+                />
               </div>
-            </article>
 
-            <article className="card">
-              <div className="cardBody">
-                <div className="cardTitle">Pizzas napolitanas</div>
-                <div className="cardText">
-                  Pizzas al horno de leña, masa de larga fermentación e ingredientes seleccionados.
-                </div>
-                <div style={{ marginTop: 12 }}>
-                  <Link className="cta" href="/pizzas">
-                    Ver carta de pizzas
-                  </Link>
-                </div>
-              </div>
-            </article>
-          </div>
+              <h3 className="productName">{producto.nombre}</h3>
+              <p className="productPrice">{producto.precio}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
     </main>
   );
 }

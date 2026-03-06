@@ -310,6 +310,7 @@ body {
 .h2 {
   font-size: 28px;
   margin-bottom: 12px;
+  font-family: var(--font-playfair), Georgia, serif;
 }
 
 .p {
@@ -345,6 +346,7 @@ body {
 .cardTitle {
   font-weight: 800;
   margin-bottom: 6px;
+  font-family: var(--font-playfair), Georgia, serif;
 }
 
 .cardText {
@@ -393,6 +395,7 @@ body {
 
 .photoTitle {
   font-weight: 800;
+  font-family: var(--font-playfair), Georgia, serif;
 }
 
 .photoText {
@@ -444,6 +447,7 @@ body {
 .offerCardTitle {
   font-weight: 800;
   margin-bottom: 6px;
+  font-family: var(--font-playfair), Georgia, serif;
 }
 
 .offerCardText {
@@ -507,18 +511,31 @@ body {
   padding: 10px 10px 14px;
 }
 
+.productImageWrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
 .productImage {
   width: 100%;
   height: 150px;
   object-fit: cover;
-  border-radius: 12px;
   display: block;
-  margin-bottom: 8px;
 }
 
 .productName {
   font-size: 14px;
   font-weight: 600;
+  text-align: center;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.productPrice {
+  font-size: 13px;
+  opacity: .8;
+  margin-top: 2px;
+  text-align: center;
 }
 
 

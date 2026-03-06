@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -16,9 +17,9 @@ export default function Home() {
           </p>
 
           <div className="ctaRow ctaRowCentered">
-            <Link className="cta ctaPrimary" href="/productos">
+            <a className="cta ctaPrimary" href="#productos">
               Ver productos
-            </Link>
+            </a>
 
             {/* baja a la sección "Qué te podemos ofrecer" */}
             <a className="cta ctaPrimary" href="#oferta">
@@ -106,74 +107,106 @@ export default function Home() {
 
           <div className="productsGrid">
             <article className="productCard">
-              <img
-                className="productImage"
-                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
-                alt="Delantal La Fragua"
-              />
+              <div className="productImageWrapper">
+                <Image
+                  className="productImage"
+                  src="/images/logoblanco.png"
+                  alt="Delantales La Fragua"
+                  width={200}
+                  height={200}
+                />
+              </div>
               <h3 className="productName">Delantales</h3>
             </article>
 
             <article className="productCard">
-              <img
-                className="productImage"
-                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
-                alt="Cortadora de pizza La Fragua"
-              />
+              <div className="productImageWrapper">
+                <Image
+                  className="productImage"
+                  src="/images/logoblanco.png"
+                  alt="Cortadora de pizza La Fragua"
+                  width={200}
+                  height={200}
+                />
+              </div>
               <h3 className="productName">Cortadora de Pizza</h3>
             </article>
 
             <article className="productCard">
-              <img
-                className="productImage"
-                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
-                alt="Parrilla de piso La Fragua"
-              />
+              <div className="productImageWrapper">
+                <Image
+                  className="productImage"
+                  src="/images/logoblanco.png"
+                  alt="Parrilla de piso La Fragua"
+                  width={200}
+                  height={200}
+                />
+              </div>
               <h3 className="productName">Parrilla de piso</h3>
             </article>
 
             <article className="productCard">
-              <img
-                className="productImage"
-                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
-                alt="Chulengo La Fragua"
-              />
+              <div className="productImageWrapper">
+                <Image
+                  className="productImage"
+                  src="/images/logoblanco.png"
+                  alt="Chulengo La Fragua"
+                  width={200}
+                  height={200}
+                />
+              </div>
               <h3 className="productName">Chulengo</h3>
             </article>
 
             <article className="productCard">
-              <img
-                className="productImage"
-                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
-                alt="Fogonero La Fragua"
-              />
+              <div className="productImageWrapper">
+                <Image
+                  className="productImage"
+                  src="/images/logoblanco.png"
+                  alt="Fogonero La Fragua"
+                  width={200}
+                  height={200}
+                />
+              </div>
               <h3 className="productName">Fogonero</h3>
             </article>
 
             <article className="productCard">
-              <img
-                className="productImage"
-                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
-                alt="Piedra refractaria para horno La Fragua"
-              />
+              <div className="productImageWrapper">
+                <Image
+                  className="productImage"
+                  src="/images/logoblanco.png"
+                  alt="Piedra refractaria para horno La Fragua"
+                  width={200}
+                  height={200}
+                />
+              </div>
               <h3 className="productName">Piedra Refractaria para el horno</h3>
             </article>
 
             <article className="productCard">
-              <img
-                className="productImage"
-                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
-                alt="Tabla de madera maciza multiuso La Fragua"
-              />
+              <div className="productImageWrapper">
+                <Image
+                  className="productImage"
+                  src="/images/logoblanco.png"
+                  alt="Tabla de madera maciza multiuso La Fragua"
+                  width={200}
+                  height={200}
+                />
+              </div>
               <h3 className="productName">Tabla de Madera Maciza Multiuso</h3>
             </article>
 
             <article className="productCard">
-              <img
-                className="productImage"
-                src="https://placehold.co/600x400/111111/EAEAEA?text=La+Fragua"
-                alt="Cuchillo de asado de 30 cm La Fragua"
-              />
+              <div className="productImageWrapper">
+                <Image
+                  className="productImage"
+                  src="/images/logoblanco.png"
+                  alt="Cuchillo de asado de 30 cm La Fragua"
+                  width={200}
+                  height={200}
+                />
+              </div>
               <h3 className="productName">Cuchillo de Asado 30cm</h3>
             </article>
           </div>
