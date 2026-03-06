@@ -63,6 +63,10 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
+
+          <Link className="navCta" href="/cotizador" onClick={closeMenus}>
+            Cotizá tu evento
+          </Link>
         </nav>
       </div>
 

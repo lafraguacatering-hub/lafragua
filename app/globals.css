@@ -1364,4 +1364,34 @@ body {
     font-size: 10px;
     padding: 7px 10px;
   }
+}.navCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-playfair), Georgia, serif;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.navCta:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .navCta {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 14px;
+  }
 }

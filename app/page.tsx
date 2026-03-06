@@ -17,15 +17,18 @@ export default function Home() {
           </p>
 
           <div className="ctaRow ctaRowCentered">
-            <a className="cta ctaPrimary" href="#productos">
-              Ver productos
-            </a>
+  <Link href="/cotizador" className="cta ctaPrimary">
+    Cotizá tu evento
+  </Link>
 
-            {/* baja a la sección "Qué te podemos ofrecer" */}
-            <a className="cta ctaPrimary" href="#oferta">
-              Ver catering
-            </a>
-          </div>
+  <Link href="/asado" className="cta">
+    Ver asados
+  </Link>
+
+  <Link href="/pizzas" className="cta">
+    Ver pizzas
+  </Link>
+</div>
         </div>
       </section>
 
