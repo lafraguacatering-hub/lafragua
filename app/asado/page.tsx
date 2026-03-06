@@ -1,37 +1,87 @@
+import Image from "next/image";
+
+const menus = [
+  {
+    emoji: "🔥",
+    nombre: "Menú La Fragua",
+    items: [
+      "Choripán artesanal con chimichurri",
+      "Matambre de cerdo al limón",
+      "Entraña a la parrilla",
+      "Lomo",
+      "Colita de cuadril",
+      "Postres a consultar",
+    ],
+  },
+  {
+    emoji: "🇦🇷",
+    nombre: "Menú Tradición",
+    items: [
+      "Choripán argentino",
+      "Mollejas al limón",
+      "Matambre de cerdo",
+      "Lomo",
+      "Ojo de bife",
+    ],
+  },
+  {
+    emoji: "🎶",
+    nombre: "Menú Tango",
+    items: [
+      "Chorizo artesanal y picada",
+      "Mollejas y entraña",
+      "Lomo",
+      "Bondiola de cerdo",
+      "Postre artesanal",
+    ],
+  },
+];
+
 export default function Asado() {
   return (
     <main className="page">
-      <section className="section">
-        <div className="container">
-          <h1 className="h1">Menús de Asado</h1>
-          <p className="p">
-            Asado argentino a fuego real, con opciones para diferentes tipos de eventos.
-          </p>
+      <section className="section asadoPage">
+        <div className="container asadoContainer">
+          <div className="asadoIntro">
+            <p className="asadoKicker">CATERING · FUEGO · EXPERIENCIA</p>
+            <h1 className="h1 asadoMainTitle">Menús de Asado</h1>
+            <p className="p asadoMainText">
+              Asado argentino a fuego real, con opciones pensadas para distintos
+              tipos de eventos, celebraciones y experiencias gastronómicas.
+            </p>
+          </div>
 
-          <h2 className="h2">🔥 Menú La Fragua</h2>
-          <ul>
-            <li>Choripán artesanal con chimichurri</li>
-            <li>Matambre de cerdo al limón</li>
-            <li>Entraña a la parrilla</li>
-            <li>Lomo y colita de cuadril</li>
-            <li>Postres a consultar</li>
-          </ul>
+          <div className="asadoMenuGrid">
+            {menus.map((menu) => (
+              <article key={menu.nombre} className="asadoMenuCard">
+                <div className="asadoMenuImageWrap">
+                  <Image
+                    src="/logoblanco.png"
+                    alt={menu.nombre}
+                    width={220}
+                    height={220}
+                    className="asadoMenuImage"
+                    priority
+                  />
+                </div>
 
-          <h2 className="h2">🇦🇷 Menú Tradición</h2>
-          <ul>
-            <li>Choripán argentino</li>
-            <li>Mollejas al limón</li>
-            <li>Matambre de cerdo</li>
-            <li>Lomo y ojo de bife</li>
-          </ul>
+                <div className="asadoMenuBody">
+                  <h2 className="asadoMenuTitle">
+                    <span className="asadoMenuEmoji">{menu.emoji}</span>
+                    {menu.nombre}
+                  </h2>
 
-          <h2 className="h2">🎶 Menú Tango</h2>
-          <ul>
-            <li>Chorizo artesanal y picada</li>
-            <li>Mollejas y entraña</li>
-            <li>Lomo y bondiola de cerdo</li>
-            <li>Postre artesanal</li>
-          </ul>
+                  <ul className="asadoMenuList">
+                    {menu.items.map((item) => (
+                      <li key={item} className="asadoMenuItem">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </main>
